@@ -13,6 +13,23 @@
 <div class="login-container">
     <div class="login-card">
         <h2 class="title">Iniciar Sesión</h2>
+        <%
+		    String error = request.getParameter("error");
+		    if ("invalid".equals(error)) {
+		%>
+		    <div class="error-message-login">Usuario o contraseña incorrectos.</div>
+		<%
+		    } else if ("empty".equals(error)) {
+		%>
+		    <div class="error-message">Por favor, complete todos los campos.</div>
+		<%
+		    } else if ("exception".equals(error)) {
+		%>
+		    <div class="error-message-login">Error interno del servidor. Intente más tarde.</div>
+		<%
+		    }
+		%>
+		        
         <form action="loginServlet" method="post">
             <div class="form-group">
                 <label for="user">Usuario</label>

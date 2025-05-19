@@ -135,6 +135,31 @@ public class funcionDAO {
         }
         return funciones;
     }
+    
+    public boolean existeFuncion(int sala, Date fecha, Time hora) throws SQLException {
+        String sql = "SELECT COUNT(*) FROM funciones WHERE sala = ? AND fecha = ? AND hora = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, sala);
+            stmt.setDate(2, fecha);
+            stmt.setTime(3, hora);
+            try (ResultSet rs = stmt.executeQuery()) {
+                return rs.next() && rs.getInt(1) > 0;
+            }
+        }
+    }
+
+    public boolean existeFuncion(int sala, Date fecha, Time hora, int id) throws SQLException {
+        String sql = "SELECT COUNT(*) FROM funciones WHERE sala = ? AND fecha = ? AND hora = ? AND id != ?";
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, sala);
+            stmt.setDate(2, fecha);
+            stmt.setTime(3, hora);
+            stmt.setInt(4, id);
+            try (ResultSet rs = stmt.executeQuery()) {
+                return rs.next() && rs.getInt(1) > 0;
+            }
+        }
+    }
 
 
 

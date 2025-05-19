@@ -13,6 +13,29 @@
 <div class="registro-container">
     <div class="registro-card">
         <h2 class="title">Registro de Usuario</h2>
+			        <%
+			    String error = request.getParameter("error");
+			    String success = request.getParameter("success");
+			    if (error != null) {
+			        if (error.equals("emailExists")) {
+			%>
+			            <div class="alert alert-error">El correo electrónico ya está registrado.</div>
+			<%
+			        } else if (error.equals("registrationFailed")) {
+			%>
+			            <div class="alert alert-error">Error en el registro, intente nuevamente.</div>
+			<%
+			        } else if (error.equals("exception")) {
+			%>
+			            <div class="alert alert-error">Ocurrió un error inesperado.</div>
+			<%
+			        }
+			    } else if (success != null && success.equals("registered")) {
+			%>
+			        <div class="alert alert-success">Registro exitoso, ya puedes iniciar sesión.</div>
+			<%
+			    }
+			%>
         <form action="registroServlet" method="post" class="registro-formulario">
             <div class="form-group">
                 <label class="form-label">Nombre Completo</label>

@@ -264,6 +264,17 @@ body {
     color: #ffaa00;
 }
 
+.login-card .error-message-login {
+    color: #ff4d4d;
+    background-color: #ffe5e5;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ffcccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
 /* ---------------------- ESTILOS DE REGISTRO ---------------------- */
 .registro-body {
     margin: 0;
@@ -322,6 +333,27 @@ body {
     text-decoration: underline;
     color: #ffaa00;
 }
+
+.alert {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
 
 /* ---------------------- ESTILOS DE ADMINISTRADOR ---------------------- */
 
@@ -1089,3 +1121,52 @@ body {
 .btn-volver-catalogo:hover {
     background-color: #fb8c00;
 }
+
+.error-page {
+    background-color: #f8d9da; /* fondo rojo claro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0 20px;
+    color: #721c24; /* rojo oscuro */
+}
+
+.error-page__container {
+    background-color: #f5c6cb; /* rojo suave */
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(114, 28, 36, 0.4);
+    max-width: 500px;
+    text-align: center;
+}
+
+.error-page__title {
+    margin-top: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.error-page__message {
+    font-size: 1.2rem;
+    margin: 15px 0 25px 0;
+}
+
+.error-page__link {
+    display: inline-block;
+    background-color: #721c24;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.error-page__link:hover {
+    background-color: #5a151b;
+}
+
+
