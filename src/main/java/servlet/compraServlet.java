@@ -47,9 +47,7 @@ public class compraServlet extends HttpServlet {
                         int idReserva = reservaDAO.obtenerUltimaReservaId(usuarioId);
                         String numeroOrden = reservaDAO.obtenerNumeroOrdenPorUsuario(usuarioId);
                         response.sendRedirect("confirmacion.jsp?reservaId=" + idReserva + "&numeroOrden=" + numeroOrden);
-                    } else {
-                        response.sendRedirect("error.jsp");
-                    }
+                    } 
                 } else {
                     // Sin stock, vuelve a la vista reserva.jsp con el cartel
                     funcion funcion = funcionDAO.obtenerFuncionPorId(funcionId);
@@ -64,7 +62,6 @@ public class compraServlet extends HttpServlet {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            response.sendRedirect("error.jsp");
         }
     }
 }

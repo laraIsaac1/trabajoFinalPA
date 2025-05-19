@@ -29,7 +29,6 @@ public class obraServlet extends HttpServlet {
             
         } catch (SQLException e) {
             e.printStackTrace();
-            response.sendRedirect("error.jsp");
         }
     }
 }

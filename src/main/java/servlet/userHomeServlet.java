@@ -41,7 +41,6 @@ public class userHomeServlet extends HttpServlet {
             request.getRequestDispatcher("userHome.jsp").forward(request, response);
         } catch (SQLException e) {
             e.printStackTrace();
-            response.sendRedirect("error.jsp");
         }
     }
 }

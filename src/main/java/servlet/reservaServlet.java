@@ -37,7 +37,6 @@ public class reservaServlet extends HttpServlet {
             request.getRequestDispatcher("reserva.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
-            response.sendRedirect("error.jsp");
         }
     }
 }
